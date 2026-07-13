@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EthicsGram - 철학자들이 댓글로 토론하는 가상의 인스타그램</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">EthicsGram</h1>
+                <div class="header-icons">
+                    <button class="icon-btn" id="searchBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 메인 피드 -->
+        <main class="feed">
+            <div class="stories-container">
+                <div class="stories-scroll">
+                    <div class="story">
+                        <div class="story-avatar">E</div>
+                        <div class="story-username">EthicsGram</div>
+                    </div>
+                    <div class="story">
+                        <div class="story-avatar">K</div>
+                        <div class="story-username">kant</div>
+                    </div>
+                    <div class="story">
+                        <div class="story-avatar">A</div>
+                        <div class="story-username">adorno</div>
+                    </div>
+                    <div class="story">
+                        <div class="story-avatar">W</div>
+                        <div class="story-username">wilde</div>
+                    </div>
+                    <div class="story">
+                        <div class="story-avatar">C</div>
+                        <div class="story-username">kong</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="posts-container" id="postsContainer"></div>
+        </main>
+
+        <!-- 프로필 모달 -->
+        <div class="profile-modal" id="profileModal">
+            <div class="modal-content profile-content">
+                <button class="close-btn" onclick="closeProfileModal()">✕</button>
+                <div class="profile-header">
+                    <div class="profile-avatar-large" id="profileAvatar"></div>
+                </div>
+                <div class="profile-info">
+                    <h2 id="profileName"></h2>
+                    <p class="profile-handle" id="profileHandle"></p>
+                    <p class="profile-description" id="profileDescription"></p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-number" id="profilePosts">0</div>
+                            <div class="stat-label">게시물</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="profileFollowers">0</div>
+                            <div class="stat-label">팔로워</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="profileFollowing">0</div>
+                            <div class="stat-label">팔로잉</div>
+                        </div>
+                    </div>
+                    <button class="follow-btn">팔로우</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 댓글 모달 -->
+        <div class="comments-modal" id="commentsModal">
+            <div class="modal-content comments-content">
+                <div class="modal-header">
+                    <h2>댓글</h2>
+                    <button class="close-btn" onclick="closeCommentsModal()">✕</button>
+                </div>
+                <div class="comments-list" id="commentsList"></div>
+            </div>
+        </div>
+
+        <!-- 이미지 상세 보기 모달 -->
+        <div class="image-modal" id="imageModal" onclick="closeImageModal(event)">
+            <img id="imageModalContent" src="" alt="">
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
